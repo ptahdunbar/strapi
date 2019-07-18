@@ -162,7 +162,8 @@ const schemaBuilder = {
 
     let groups = Object.keys(strapi.groups)
       .map(key =>
-        Resolvers.buildModel(strapi.groups[key], null, {
+        Resolvers.buildModel(strapi.groups[key], key, {
+          plugin: null,
           isGroup: true,
         })
       )
